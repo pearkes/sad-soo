@@ -6,9 +6,9 @@ from images import images
 
 
 app = Flask(__name__)
-app.debug = True
+app.debug = os.environ.get('DEBUG', False)
 
-# The number of idols we drop by default.
+# The number of sad-soo's we drop by default.
 DEFAULT_BOMB = 5
 
 
@@ -16,34 +16,32 @@ DEFAULT_BOMB = 5
 def index():
     d = {
         'resources': {
-            '/random': 'A random picture of a Japanese idol.',
-            '/bomb(?count=5)': 'Bomb idols. Optionally, set how many you\'d like to bomb.',
-            '/count': 'The number of idols we have.'
+            '/random': 'A random picture of a sad-soo.',
+            '/bomb(?count=5)': 'Bomb sad-soo\'s. Optionally, set how many you\'d like to bomb.',
+            '/count': 'The number of sad-soo\'s we have.'
         },
-        'source': 'https://github.com/bryanveloso/aidoru',
-        'thanks': [
-            'http://aigaki.tumblr.com/',
-            'http://fyeahrokkies.tumblr.com/'
-        ]
+        'source': 'https://github.com/pearkes/sad-soo',
+        'thanks': 'https://github.com/bryanveloso',
+        'forked': 'https://github.com/bryanveloso/aidoru',
     }
     return jsonify(d)
 
 
 @app.route('/random')
-def random_idol():
-    idol = random.choice(images)
-    return jsonify({'idol': idol})
+def random_sad_soo():
+    sad_soo = random.choice(images)
+    return jsonify({'sad-soo': sad_soo})
 
 
 @app.route('/bomb')
-def bomb_idols():
+def bomb_sad_soos():
     count = request.args.get('count', DEFAULT_BOMB)
-    idols = random.sample(images, int(count))
-    return jsonify({'idols': idols})
+    sad_soos = random.sample(images, int(count))
+    return jsonify({'sad-soos': sad_soos})
 
 
 @app.route('/count')
-def count_idols():
+def count_sad_soos():
     count = len(images)
     return jsonify({'count': count})
 
