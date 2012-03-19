@@ -30,14 +30,14 @@ def index():
 @app.route('/random')
 def random_sad_soo():
     sad_soo = random.choice(images)
-    return jsonify({'sad-soo': sad_soo})
+    return jsonify({'sad_soo': sad_soo})
 
 
 @app.route('/bomb')
 def bomb_sad_soos():
     count = request.args.get('count', DEFAULT_BOMB)
     sad_soos = random.sample(images, int(count))
-    return jsonify({'sad-soos': sad_soos})
+    return jsonify({'sad_soos': sad_soos})
 
 
 @app.route('/count')
