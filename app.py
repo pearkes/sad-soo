@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.debug = os.environ.get('DEBUG', False)
 
 # The number of sad-soo's we drop by default.
-DEFAULT_BOMB = 5
+DEFAULT_BOMB = 3
 
 
 @app.route('/')
