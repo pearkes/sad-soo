@@ -6,19 +6,17 @@ Fetch a random sad-soo:
 
     $ curl http://sad-soo.herokuapp.com/random
     {
-      "idol": "http://26.media.tumblr.com/tumblr_luz0q1X7AQ1r6j9k4o1_400.gif"
+      "sad_soo": "http://sad-soo.s3.amazonaws.com/hot-startup.jpg"
     }
 
-Bomb sad-soo's (the `count` argument is optional, by default 5 idols are bombed):
+Bomb sad-soo's (the `count` argument is optional, by default 3 sad-soo's are bombed):
 
-    $ curl http://sad-soo.herokuapp.com/bomb?count=5
+    $ curl http://sad-soo.herokuapp.com/bomb?count=3
     {
-      "sad-soo": [
-        "http://24.media.tumblr.com/tumblr_lv4p1smS6I1r6j9k4o1_250.gif",
-        "http://30.media.tumblr.com/tumblr_lxpdfl8cvS1r6j9k4o1_400.gif",
-        "http://27.media.tumblr.com/tumblr_luz4a5t80W1r6j9k4o1_400.gif",
-        "http://28.media.tumblr.com/tumblr_lxpdglIuBY1r6j9k4o2_400.gif",
-        "http://24.media.tumblr.com/tumblr_ly37wbKxSD1r6j9k4o2_400.gif"
+      "sad_soos": [
+        "http://sad-soo.s3.amazonaws.com/hot-startup.jpg",
+        "http://distilleryimage2.s3.amazonaws.com/0f1acefe696711e1989612313815112c_7.jpg",
+        "http://sad-soo.s3.amazonaws.com/emails.jpg
       ]
     }
 
@@ -26,9 +24,12 @@ Count how many sad-soo's we have:
 
     $ curl http://sad-soo.herokuapp.com/count
     {
-      "count": 382
+      "count": 3
     }
 
+## Need More Sad-soo's
+
+Pull request your sad-soo's.
 
 ## Special Thanks
 
